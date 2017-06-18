@@ -18,6 +18,7 @@ class LinkedList
   end
 
   def pop_front
+    return nil if @size == 0
     node = @head
     @head = node.next
     @size -= 1

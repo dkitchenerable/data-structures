@@ -1,4 +1,5 @@
 require_relative 'linked_list.rb'
+
 class Node
   attr_accessor :next, :key, :value
   def initialize(k, v)
@@ -6,5 +7,9 @@ class Node
     @value = v
     @next = nil
     @prev = nil
+  end
+
+  def <=>(object)
+    self.key <=> object.key
   end
 end

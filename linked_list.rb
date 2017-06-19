@@ -48,6 +48,7 @@ class LinkedList
 
   #UNSOLVED BELOW !!!
   def pop_back
+    return nil if @size == 0
     back_node = @tail
     @size -= 1
     if @size == 1

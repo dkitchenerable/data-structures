@@ -8,8 +8,4 @@ class Node
     @next = nil
     @prev = nil
   end
-
-  def <=>(object)
-    self.key <=> object.key
-  end
 end

@@ -1,4 +1,5 @@
 require_relative 'node.rb'
+# A single linked list implementation 
 
 class LinkedList
   attr_accessor :head, :tail, :size
@@ -46,7 +47,6 @@ class LinkedList
     @head = @tail if @size == 1
   end
 
-  #UNSOLVED BELOW !!!
   def pop_back
     return nil if @size == 0
     back_node = @tail

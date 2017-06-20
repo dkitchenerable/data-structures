@@ -5,7 +5,46 @@ describe LinkedList do
   before (:each) do
     @list = LinkedList.new
   end
-    
+
+  describe "#pop_back" do
+    before (:each) do
+      @node1 = Node.new(1, 2)
+    end
+
+    context "empty list" do
+      it "should return nil" do
+        expect(@list.pop_back).to be_nil
+      end
+    end
+
+    context "non-empty list" do
+      before(:each) do
+        @list.push_front(@node1)
+      end
+
+      it "should return correct node" do
+        @list.push_front(Node.new(1,2))
+        expect(@list.pop_back).to eq(@node1)
+      end
+
+      it "head is updated" do
+        @list.pop_back
+        expect(@list.head).to be_nil
+      end
+
+      it "tail is updated" do
+        @list.push_back(Node.new(1,2))
+        @list.pop_back
+        expect(@list.tail).to eq(@node1)
+      end
+
+      it "size is updated" do
+        @list.pop_back
+        expect(@list.size).to eq(0)
+      end 
+    end
+  end
+
   describe "#push_back" do
     before (:each) do
       @node1 = Node.new(1, 2)

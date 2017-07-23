@@ -201,6 +201,21 @@ describe LinkedList do
         expect(@list.head).to be_nil
       end
 
+      it "popped node is correct value" do
+        @list.push_front(@node1)
+        @list.push_front(Node.new(2,1))
+        popped_node = @list.pop_front
+        expect(popped_node.key).to eq(2)
+      end
+
+      it "popping front should return node with nil next" do
+        @list.push_front(@node1)
+        @list.push_front(Node.new(2,1))
+        popped_node = @list.pop_front
+        expect(popped_node.next).to be_nil
+        expect(popped_node.key).to eq(2)
+      end
+
       it "size is decremented" do
         @list.push_front(@node1)
         @list.pop_front

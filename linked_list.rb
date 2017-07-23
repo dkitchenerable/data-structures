@@ -22,6 +22,7 @@ class LinkedList
     return nil if @size == 0
     node = @head
     @head = node.next
+    node.next = nil
     @size -= 1
     update_tail
     node
